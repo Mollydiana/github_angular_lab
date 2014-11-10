@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Search</title>
+
+    <script src="{% static "js/vendors/jquery.js" %}"></script>
+
+    <!-- Base Angular source code -->
+
+    <script src="{% static "js/vendors/angular/angular.js" %}"></script>
+    <script src="{% static "js/vendors/angular/angular-resource.js" %}"></script>
+    <script src="{% static "js/vendors/angular/angular-sanitize.js" %}"></script>
+
+    <!------- Bootstrap ------->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Josefin+Sans|Gloria+Hallelujah|Pacifico' rel='stylesheet' type='text/css'>
+
+    <!-- Gives us access to Angular's ngRoute module -->
+    <script src="{% static "js/vendors/angular/angular-route.js" %}"></script>
+
+
+    <!-- Defines our Angular app -->
+    <script src="{% static "js/app.js" %}"></script>
+
+
+    <!-- Defines our index page's controller -->
+    <script src="{% static "js/controllers/searchController.js" %}"></script>
+<head>
+<body>
+
+    <div class="container" ng-app="githubsearch">
+        <div ng-view></div>
+            </div>
+</body>
+</html>

@@ -1,10 +1,13 @@
 from django.conf.urls import patterns, include, url
+
 from django.contrib import admin
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'github_angular_lab.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+admin.autodiscover()
 
-    url(r'^admin/', include(admin.site.urls)),
+urlpatterns = patterns('',
+    # This is our new URL
+    url(r'^$', 'github_app.views.index', name="index"),
+    url(r'^proxy/(?P<path>.*)$', 'github_app.views.proxy_to', {'target_url': 'https://api.github.com/'}),
 )
+
+
